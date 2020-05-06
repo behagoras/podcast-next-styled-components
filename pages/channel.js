@@ -35,11 +35,9 @@ export async function getServerSideProps({ query }) {
     fetch(`https://api.audioboom.com/channels/${id}/child_channels`),
     fetch(`https://api.audioboom.com/channels/${id}/audio_clips`),
   ])
-
   const { body: { channel } } = await resChannel.json()
   const { body: { channels: series } } = await resSeries.json()
   const { body: { audio_clips: audioClips } } = await resAudios.json()
-
   return { props: {
     channel,
     series,
