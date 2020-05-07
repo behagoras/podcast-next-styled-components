@@ -107,12 +107,19 @@ const Podcast = ({ clip = {} }) => {
   )
 }
 
-export async function getServerSideProps({ query }) {
-  const { id } = query
-  const fetchClip = await fetch(`https://api.audioboom.com/audio_clips/${id}.mp3`)
-  const clip = (await fetchClip.json()).body.audio_clip
-  console.log('clip', clip)
-  return { props: { clip } }
+export async function getServerSideProps({ query, res }) {
+  try {
+    const { id } = query
+    const fetchClip = await fetch(`https://api.audioboom.com/audio_clips/${id}.mp3`)
+    const clip = (await fetchClip.json()).body.audio_clip
+    console.log('clip', clip)
+    res.statusCode = 200
+    return { props: { clip, statusCode: res.statusCode } }
+  } catch (error) {
+    res.statusCode = 503
+    return { props: { statusCode: res.statusCode } }
+  }
+
 }
 
 export default Podcast
