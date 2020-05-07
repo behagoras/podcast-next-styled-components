@@ -22,7 +22,7 @@ const ChannelGrid = ({ channels, title }) => {
     <>
       { title && <Title>{title}</Title> }
       <Channels>
-        { channels.map((channel) => <Channel channel={channel} />) }
+        { channels.map((channel) => <Channel channel={channel} key={`c-${channel.id}`} />) }
       </Channels>
     </>
   )

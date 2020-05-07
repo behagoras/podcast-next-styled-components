@@ -11,7 +11,7 @@ const PodcastsGrid = ({ audioClips, title }) => {
   return (
     <>
       { title && <Title>{title}</Title> }
-      { audioClips.map((clip) => <Podcast podcast={clip} />)}
+      { audioClips.map((clip) => <Podcast podcast={clip} key={`c-${clip.id}`} />)}
     </>
   )
 }
