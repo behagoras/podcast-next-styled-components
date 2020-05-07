@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import {Link} from '../routes'
+import slug from '../utils/slug';
+
 
 const Title = styled.h3`
   padding: 5px;
@@ -24,7 +26,12 @@ const Image = styled.img`
 
 const Channel = ({ channel }) => {
   return (
-    <Link href={`/channel?id=${channel.id}`} prefetch>
+    // <Link route='blog' params={{slug: 'hello-world'}}>
+    // href={`/channel?id=${channel.id}`}
+    <Link route="channel" params={{
+      slug:slug(channel.title),
+      id:channel.id
+    }}>
       <Container>
         <Image src={channel.urls.logo_image.original} alt={channel.name} />
         <Title>{channel.title}</Title>
