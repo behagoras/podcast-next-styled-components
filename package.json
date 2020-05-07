@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,10 @@
     "babel-eslint": "^10.1.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.3.6",
+    "next-routes": "^1.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "slugify": "^1.4.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {

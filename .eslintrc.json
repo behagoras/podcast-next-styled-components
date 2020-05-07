@@ -340,6 +340,7 @@
     "yoda": [
       2,
       "never"
-    ]
+    ],
+    "anchor-is-valid":"never"
   }
 }
