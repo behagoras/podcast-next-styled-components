@@ -29,7 +29,7 @@ const Meta = styled.div`
 
 const Podcast = ({ podcast }) => {
   return (
-    <Link href={`/podcast?id=${podcast.id}`} key={podcast.id}>
+    <Link href={`/podcast?id=${podcast.id}`} key={`k-${podcast.id}`}>
       <Container>
         <PodcastTitle>{ podcast.title }</PodcastTitle>
         <Meta>
