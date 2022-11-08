@@ -14,7 +14,7 @@
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^9.3.6",
+    "next": "^13.0.2",
     "next-routes": "^1.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
